@@ -1,0 +1,8 @@
+{
+    "[python]": {
+        "editor.wordWrap": "wordWrapColumn",
+        "editor.wordWrapColumn": 120,
+        "editor.rulers": [120],
+        "editor.formatOnSave": true
+    }
+} 

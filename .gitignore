@@ -8,6 +8,10 @@ build/
 dist/
 wheels/
 
+# html files are only output; ignore
+*.html
+*.htm
+
 
 # Virtual environments
 .venv

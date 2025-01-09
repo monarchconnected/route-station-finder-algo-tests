@@ -22,13 +22,28 @@ from tabulate import tabulate
 
 
 def load_config():
-    """Load environment variables"""
+    """
+    Load environment variables
+
+    Returns:
+        dict: Configuration dictionary containing database and API credentials
+
+    Raises:
+        ValueError: If required environment variables are not set
+    """
     load_dotenv()
-    return {
+    config = {
         'db_url': os.getenv('DB_URL'),
         'db_name': os.getenv('DB_NAME'),
         'google_maps_api_key': os.getenv('GOOGLE_MAPS_API_KEY')
     }
+
+    # Validate required environment variables
+    missing_vars = [k for k, v in config.items() if v is None]
+    if missing_vars:
+        raise ValueError(f"Missing required environment variables: {', '.join(missing_vars)}")
+
+    return config
 
 
 def measure_memory_usage():

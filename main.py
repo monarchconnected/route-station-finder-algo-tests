@@ -257,7 +257,7 @@ def main():
     ]
     print(tabulate(comparison_data, headers='firstrow', tablefmt='psql', numalign='right'))
 
-    # Use GeoPandas results for final output
+    # Use KDTree results for final output
     if kdtree_stations:
         print_fuel_station_table(
             kdtree_stations[:10],
